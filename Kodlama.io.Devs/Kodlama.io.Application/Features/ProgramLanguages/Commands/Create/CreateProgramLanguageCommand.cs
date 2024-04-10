@@ -31,7 +31,7 @@ namespace Kodlama.io.Application.Features.ProgramLanguage.Commands.Create
             public async Task<CreateProgramLanguageDto> Handle(CreateProgramLanguageCommand request, 
                 CancellationToken cancellationToken)
             {
-                await _rules.LanguageNameCanNotBeDuplicatedWhenRequest(request.Name);
+                await _rules.LanguageNameCanNotBeDuplicatedWhenInserted(request.Name);
 
                 var mappedPlanguage = _mapper.Map<Language>(request);
                 Language pLanguage = await _languageRepository.AddAsync(mappedPlanguage);

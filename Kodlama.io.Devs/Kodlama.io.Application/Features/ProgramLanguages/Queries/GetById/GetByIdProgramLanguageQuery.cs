@@ -4,6 +4,7 @@ using Kodlama.io.Application.Features.ProgramLanguages.BaseEntityDependency;
 using Kodlama.io.Application.Features.ProgramLanguages.Dtos;
 using Kodlama.io.Application.Services.Repositories;
 using MediatR;
+using Language = Kodlama.io.Domain.Entities.ProgramLanguage;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,10 +17,9 @@ namespace Kodlama.io.Application.Features.ProgramLanguages.Queries.GetById
     public class GetByIdProgramLanguageQuery:IRequest<GetByIdProgramLanguageDto>
     {
 
-        public int Id { get; set; }
+       public int Id { get; set; }
 
-        public class GetByIdProgramLanguageQueryHandler :EntityDependResolver,
-            IRequestHandler<GetByIdProgramLanguageQuery, GetByIdProgramLanguageDto>
+       public class GetByIdProgramLanguageQueryHandler :EntityDependResolver, IRequestHandler<GetByIdProgramLanguageQuery, GetByIdProgramLanguageDto>
         {
             public GetByIdProgramLanguageQueryHandler(IPLanguageRepository languageRepository, IMapper mapper, ProgramLanguageBusinessRules rules) 
                 : base(languageRepository, mapper, rules)
@@ -27,7 +27,10 @@ namespace Kodlama.io.Application.Features.ProgramLanguages.Queries.GetById
             }
             public async Task<GetByIdProgramLanguageDto> Handle(GetByIdProgramLanguageQuery request, CancellationToken cancellationToken)
             {
-               var entityMapped  =  await  PLanguageRepository.GetAsync(pl => pl.Id == request.Id);
+                Language? entityMapped  =  await  PLanguageRepository.GetAsync(pl => pl.Id == request.Id);
+               
+                Rules.ProgramLanguageSholudExistsWhenRequested(entityMapped);
+
                 GetByIdProgramLanguageDto dto = Mapper.Map<GetByIdProgramLanguageDto>(entityMapped);
                 return dto;
             }

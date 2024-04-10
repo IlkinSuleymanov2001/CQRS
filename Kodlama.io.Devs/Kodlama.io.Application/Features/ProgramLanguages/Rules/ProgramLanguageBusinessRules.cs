@@ -17,7 +17,7 @@ namespace Kodlama.io.Application.Features.ProgramLanguage.Rules
             _pLanguageRepository = pLanguageRepository;
         }
 
-        public async  Task  LanguageNameCanNotBeDuplicatedWhenRequest(string languageName ) 
+        public async  Task  LanguageNameCanNotBeDuplicatedWhenInserted(string languageName ) 
         {
            Domain.Entities.ProgramLanguage langauge =  await _pLanguageRepository.GetAsync(pl => pl.Name == languageName);
             if (langauge != null)
@@ -25,6 +25,16 @@ namespace Kodlama.io.Application.Features.ProgramLanguage.Rules
                 throw new BusinessException("Programming Language Name Exists");
             }
         }
+
+        public void ProgramLanguageSholudExistsWhenRequested(Domain.Entities.ProgramLanguage programLanguage)
+        {
+            if (programLanguage == null)
+            {
+                throw new BusinessException("Programming Language Doesnt exists");
+            }
+        }
+
+
 
     }
 }

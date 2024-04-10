@@ -1,0 +1,42 @@
+﻿using AutoMapper;
+using Core.Application.Requests;
+using Core.Persistence.Paging;
+using Kodlama.io.Application.Features.ProgramLanguage.Rules;
+using Kodlama.io.Application.Features.ProgramLanguages.Models;
+using Kodlama.io.Application.Services.Repositories;
+using MediatR;
+using Language = Kodlama.io.Domain.Entities.ProgramLanguage;
+
+namespace Kodlama.io.Application.Features.ProgramLanguages.Queries.GetAll
+{
+    public  class GetAllProgramLanguageQuery:IRequest<ProgramLanguageListModel> 
+    {
+
+        public PageRequest  PageRequest { get; set; }
+
+        public class GetAllProgramLanguageQueryHandler : IRequestHandler<GetAllProgramLanguageQuery, ProgramLanguageListModel>
+        {
+            private readonly IPLanguageRepository _languageRepository;
+            private readonly IMapper _mapper;
+            private readonly ProgramLanguageBusinessRules _rules;
+
+            public GetAllProgramLanguageQueryHandler(
+                IPLanguageRepository languageRepository,
+                IMapper mapper,
+                ProgramLanguageBusinessRules rules)
+            {
+                _languageRepository = languageRepository;
+                _mapper = mapper;
+                _rules = rules;
+            }
+
+            public async Task<ProgramLanguageListModel> Handle(GetAllProgramLanguageQuery request, CancellationToken cancellationToken)
+            {
+              IPaginate<Language> paginate =  await  _languageRepository.GetListAsync(index: request.PageRequest.Page,
+                   size: request.PageRequest.PageSize);
+              ProgramLanguageListModel resposne  = _mapper.Map<ProgramLanguageListModel>(paginate);
+                return resposne;
+            }
+        }
+    }
+}

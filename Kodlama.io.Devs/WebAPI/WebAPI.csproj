@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\onionprojectnorthwind\Kodlama.io.Devs\corePackages\Core.CrossCuttingConcers\Core.CrossCuttingConcerns.csproj" />
+    <ProjectReference Include="..\..\Core\Core.Application\Core.Application.csproj" />
     <ProjectReference Include="..\Kodlama.io.Application\Kodlama.io.Application.csproj" />
     <ProjectReference Include="..\Kodlama.io.Domain\Kodlama.io.Domain.csproj" />
     <ProjectReference Include="..\Kodlama.io.Persistance\Kodlama.io.Persistance.csproj" />

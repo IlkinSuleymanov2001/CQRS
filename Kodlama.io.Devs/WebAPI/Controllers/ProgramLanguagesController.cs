@@ -6,7 +6,6 @@ using Kodlama.io.Application.Features.ProgramLanguages.Dtos;
 using Kodlama.io.Application.Features.ProgramLanguages.Models;
 using Kodlama.io.Application.Features.ProgramLanguages.Queries.GetAll;
 using Kodlama.io.Application.Features.ProgramLanguages.Queries.GetById;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -20,7 +19,7 @@ namespace WebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
         {
-            GetAllProgramLanguageQuery reuqest = new() { PageRequest = pageRequest };
+            GetAllProgramLanguageQuery reuqest = new() {PageRequest = pageRequest };
             ProgramLanguageListModel? response = await Mediator.Send(reuqest);
             return Created("", response);
         }

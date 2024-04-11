@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core.Persistence\Core.Persistence.csproj" />
     <ProjectReference Include="..\Kodlama.io.Application\Kodlama.io.Application.csproj" />
     <ProjectReference Include="..\Kodlama.io.Domain\Kodlama.io.Domain.csproj" />
   </ItemGroup>

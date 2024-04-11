@@ -2090,7 +2090,6 @@
         "dependencies": {
           "AutoMapper": "13.0.1",
           "Core.Application": "1.0.0",
-          "Core.Persistence": "1.0.0",
           "FluentValidation": "11.9.0",
           "FluentValidation.DependencyInjectionExtensions": "11.9.0",
           "Kodlama.io.Domain": "1.0.0",
@@ -5258,23 +5257,23 @@
     },
     "Core.Application/1.0.0": {
       "type": "project",
-      "path": "../../../onionprojectnorthwind/Kodlama.io.Devs/corePackages/Core.Application/Core.Application.csproj",
-      "msbuildProject": "../../../onionprojectnorthwind/Kodlama.io.Devs/corePackages/Core.Application/Core.Application.csproj"
+      "path": "../../Core/Core.Application/Core.Application.csproj",
+      "msbuildProject": "../../Core/Core.Application/Core.Application.csproj"
     },
     "Core.CrossCuttingConcerns/1.0.0": {
       "type": "project",
-      "path": "../../../onionprojectnorthwind/Kodlama.io.Devs/corePackages/Core.CrossCuttingConcers/Core.CrossCuttingConcerns.csproj",
-      "msbuildProject": "../../../onionprojectnorthwind/Kodlama.io.Devs/corePackages/Core.CrossCuttingConcers/Core.CrossCuttingConcerns.csproj"
+      "path": "../../Core/Core.CrossCuttingConcers/Core.CrossCuttingConcerns.csproj",
+      "msbuildProject": "../../Core/Core.CrossCuttingConcers/Core.CrossCuttingConcerns.csproj"
     },
     "Core.Persistence/1.0.0": {
       "type": "project",
-      "path": "../../../onionprojectnorthwind/Kodlama.io.Devs/corePackages/Core.Persistence/Core.Persistence.csproj",
-      "msbuildProject": "../../../onionprojectnorthwind/Kodlama.io.Devs/corePackages/Core.Persistence/Core.Persistence.csproj"
+      "path": "../../Core/Core.Persistence/Core.Persistence.csproj",
+      "msbuildProject": "../../Core/Core.Persistence/Core.Persistence.csproj"
     },
     "Core.Security/1.0.0": {
       "type": "project",
-      "path": "../../../onionprojectnorthwind/Kodlama.io.Devs/corePackages/Core.Security/Core.Security.csproj",
-      "msbuildProject": "../../../onionprojectnorthwind/Kodlama.io.Devs/corePackages/Core.Security/Core.Security.csproj"
+      "path": "../../Core/Core.Security/Core.Security.csproj",
+      "msbuildProject": "../../Core/Core.Security/Core.Security.csproj"
     },
     "Kodlama.io.Application/1.0.0": {
       "type": "project",
@@ -5289,6 +5288,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Core.Persistence >= 1.0.0",
       "Kodlama.io.Application >= 1.0.0",
       "Kodlama.io.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.3",
@@ -5328,6 +5328,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "C:\\Users\\ilkin\\source\\repos\\ilkin\\Kodlama.io.Devs\\Core\\Core.Persistence\\Core.Persistence.csproj": {
+              "projectPath": "C:\\Users\\ilkin\\source\\repos\\ilkin\\Kodlama.io.Devs\\Core\\Core.Persistence\\Core.Persistence.csproj"
+            },
             "C:\\Users\\ilkin\\source\\repos\\ilkin\\Kodlama.io.Devs\\Kodlama.io.Devs\\Kodlama.io.Application\\Kodlama.io.Application.csproj": {
               "projectPath": "C:\\Users\\ilkin\\source\\repos\\ilkin\\Kodlama.io.Devs\\Kodlama.io.Devs\\Kodlama.io.Application\\Kodlama.io.Application.csproj"
             },

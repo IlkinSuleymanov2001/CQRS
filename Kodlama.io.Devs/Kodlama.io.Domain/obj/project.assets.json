@@ -642,8 +642,8 @@
     },
     "Core.Persistence/1.0.0": {
       "type": "project",
-      "path": "../../../onionprojectnorthwind/Kodlama.io.Devs/corePackages/Core.Persistence/Core.Persistence.csproj",
-      "msbuildProject": "../../../onionprojectnorthwind/Kodlama.io.Devs/corePackages/Core.Persistence/Core.Persistence.csproj"
+      "path": "../../Core/Core.Persistence/Core.Persistence.csproj",
+      "msbuildProject": "../../Core/Core.Persistence/Core.Persistence.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -684,8 +684,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ilkin\\source\\repos\\ilkin\\onionprojectnorthwind\\Kodlama.io.Devs\\corePackages\\Core.Persistence\\Core.Persistence.csproj": {
-              "projectPath": "C:\\Users\\ilkin\\source\\repos\\ilkin\\onionprojectnorthwind\\Kodlama.io.Devs\\corePackages\\Core.Persistence\\Core.Persistence.csproj"
+            "C:\\Users\\ilkin\\source\\repos\\ilkin\\Kodlama.io.Devs\\Core\\Core.Persistence\\Core.Persistence.csproj": {
+              "projectPath": "C:\\Users\\ilkin\\source\\repos\\ilkin\\Kodlama.io.Devs\\Core\\Core.Persistence\\Core.Persistence.csproj"
             }
           }
         }

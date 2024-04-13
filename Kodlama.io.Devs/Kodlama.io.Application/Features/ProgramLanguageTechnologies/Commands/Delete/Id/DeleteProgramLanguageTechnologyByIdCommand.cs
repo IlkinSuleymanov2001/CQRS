@@ -5,6 +5,7 @@ using Kodlama.io.Application.Features.ProgramLanguageTechnologies.Rules;
 using Kodlama.io.Application.Services.Repositories;
 using Kodlama.io.Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,8 +29,14 @@ namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Commands.D
 
             public async Task<DeleteProgramLanguageTechnologyDto> Handle(DeleteProgramLanguageTechnologyByIdCommand request, CancellationToken cancellationToken)
             {
-                var entity = await Rules.TechnologyExistsWhenRequested(request.Id);
+                await Rules.CheckTechnologyExistsWhenRequested(request.Id);
+
+                var entity = await TechnologyRepository.
+                     GetAsync(p => p.Id == request.Id,
+                              include: ef => ef.Include(c => c.ProgramLanguage));
+
                 await TechnologyRepository.DeleteAsync(entity);
+
                 DeleteProgramLanguageTechnologyDto dto = Mapper.Map<DeleteProgramLanguageTechnologyDto>(entity);
 
                 return dto;

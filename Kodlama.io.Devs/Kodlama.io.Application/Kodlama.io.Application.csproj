@@ -20,10 +20,7 @@
 
   <ItemGroup>
     <Folder Include="Features\ProgramLanguages\Constants\" />
-    <Folder Include="Features\ProgramLanguageTechnologies\Models\" />
     <Folder Include="Features\ProgramLanguageTechnologies\Constants\" />
-    <Folder Include="Features\ProgramLanguageTechnologies\Queries\GetList\" />
-    <Folder Include="Features\ProgramLanguageTechnologies\Queries\GetById\" />
   </ItemGroup>
 
 </Project>

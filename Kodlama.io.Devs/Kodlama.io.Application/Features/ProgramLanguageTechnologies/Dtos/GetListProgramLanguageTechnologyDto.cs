@@ -8,6 +8,8 @@ namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Dtos
 {
     public  class GetListProgramLanguageTechnologyDto
     {
-       
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string ProgramLanguageName { get; set; }
     }
 }

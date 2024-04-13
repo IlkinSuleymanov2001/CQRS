@@ -11,5 +11,6 @@ namespace Kodlama.io.Application.Services.Repositories
     public  interface  IProgramLanguageTechnologyRepository: IRepository<ProgramLanguageTechnology>,
         IAsyncRepository<ProgramLanguageTechnology>
     {
+        public Task<ProgramLanguageTechnology> GetByIdFullTechnologyData(int id);
     }
 }

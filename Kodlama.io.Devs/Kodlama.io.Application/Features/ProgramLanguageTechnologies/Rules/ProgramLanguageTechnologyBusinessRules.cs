@@ -28,31 +28,24 @@ namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Rules
                 throw new BusinessException("Technology  Name Exists");
             }
         }
-        public async Task<ProgramLanguageTechnology> TechnologyExistsWhenRequested(string name)
+        public async Task CheckTechnologyExistsWhenRequested(int  id)
         {
-            ProgramLanguageTechnology? joinedEntity = await _technologyRepository.
-                     GetAsync(p => p.Name ==name ,
-                              include: ef => ef.Include(c => c.ProgramLanguage));
-            if (joinedEntity == null)
+            var technologies  = await _technologyRepository.GetListAsync(pl => pl.Id == id);
+            if (technologies.Count==0)
             {
-                throw new BusinessException("technology doest not exists");
+                throw new BusinessException("technology doesnt not exists");
             }
-
-            return joinedEntity;
         }
-        public async Task<ProgramLanguageTechnology> TechnologyExistsWhenRequested(int  id )
+
+        public async Task CheckTechnologyExistsWhenRequested(string  name)
         {
-            ProgramLanguageTechnology? joinedEntity = await _technologyRepository.
-                     GetAsync(p => p.Id == id,
-                              include: ef => ef.Include(c => c.ProgramLanguage));
-            if (joinedEntity == null)
+            var technologies = await _technologyRepository.GetListAsync(pl => pl.Name == name);
+            if (technologies.Count == 0)
             {
-                throw new BusinessException("technology doest not exists");
+                throw new BusinessException("technology doesnt not exists");
             }
-
-            return joinedEntity;
         }
-   
+
 
         public async Task ProgramLanguageExistsWhenTechnologyUpdated(UpdateProgramLanguageTechnologyCommand request)
         {

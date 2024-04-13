@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Kodlama.io.Persistance")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26391397d011cd2f886e5bfa7142c9b0bed26486")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50d3e7632a63523aba4f40a9f03f24ffb33cfa0b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Kodlama.io.Persistance")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Kodlama.io.Persistance")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

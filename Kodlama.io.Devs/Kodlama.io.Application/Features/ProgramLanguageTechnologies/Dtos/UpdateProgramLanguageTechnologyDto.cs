@@ -10,6 +10,8 @@ namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Dtos
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string   ProgamLanguageName { get; set; }
+        public string ProgramLanguageName { get; set; }
+
+       
     }
 }

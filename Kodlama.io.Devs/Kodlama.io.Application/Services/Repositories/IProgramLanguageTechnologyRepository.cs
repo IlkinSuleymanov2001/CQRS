@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Kodlama.io.Application.Services.Repositories
 {
-    public  interface  IPLanguageRepository : IRepository<ProgramLanguage> ,
-        IAsyncRepository<ProgramLanguage>
+    public  interface  IProgramLanguageTechnologyRepository: IRepository<ProgramLanguageTechnology>,
+        IAsyncRepository<ProgramLanguageTechnology>
     {
-
     }
 }

@@ -5,6 +5,7 @@ using Kodlama.io.Application.Features.ProgramLanguage.Rules;
 using Kodlama.io.Application.Features.ProgramLanguages.Models;
 using Kodlama.io.Application.Services.Repositories;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Language = Kodlama.io.Domain.Entities.ProgramLanguage;
 
 namespace Kodlama.io.Application.Features.ProgramLanguages.Queries.GetAll
@@ -16,12 +17,12 @@ namespace Kodlama.io.Application.Features.ProgramLanguages.Queries.GetAll
 
         public class GetAllProgramLanguageQueryHandler : IRequestHandler<GetAllProgramLanguageQuery, ProgramLanguageListModel>
         {
-            private readonly IPLanguageRepository _languageRepository;
+            private readonly IProgramLanguageRepository _languageRepository;
             private readonly IMapper _mapper;
             private readonly ProgramLanguageBusinessRules _rules;
 
             public GetAllProgramLanguageQueryHandler(
-                IPLanguageRepository languageRepository,
+                IProgramLanguageRepository languageRepository,
                 IMapper mapper,
                 ProgramLanguageBusinessRules rules)
             {
@@ -32,8 +33,11 @@ namespace Kodlama.io.Application.Features.ProgramLanguages.Queries.GetAll
 
             public async Task<ProgramLanguageListModel> Handle(GetAllProgramLanguageQuery request, CancellationToken cancellationToken)
             {
-              IPaginate<Language> paginate =  await  _languageRepository.GetListAsync(index: request.PageRequest.Page,
-                   size: request.PageRequest.PageSize);
+              IPaginate<Language> paginate =  await  _languageRepository.
+                                GetListAsync(
+                               // include:ef=>ef.Include(c=>c.ProgramLanguageTechnology),
+                                index: request.PageRequest.Page,
+                                size: request.PageRequest.PageSize);
               ProgramLanguageListModel resposne  = _mapper.Map<ProgramLanguageListModel>(paginate);
                 return resposne;
             }

@@ -14,12 +14,12 @@ namespace Kodlama.io.Application.Features.ProgramLanguage.Commands.Create
 
         public class CreateProgramLanguageCommandHandler : IRequestHandler<CreateProgramLanguageCommand, CreateProgramLanguageDto>
         {
-            private readonly IPLanguageRepository _languageRepository;
+            private readonly IProgramLanguageRepository _languageRepository;
             private readonly IMapper _mapper;
             private readonly ProgramLanguageBusinessRules _rules;
 
             public CreateProgramLanguageCommandHandler(
-                IPLanguageRepository languageRepository,
+                IProgramLanguageRepository languageRepository,
                 IMapper mapper,
                 ProgramLanguageBusinessRules rules)
             {

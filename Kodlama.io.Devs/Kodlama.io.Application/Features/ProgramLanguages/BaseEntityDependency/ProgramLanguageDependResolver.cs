@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace Kodlama.io.Application.Features.ProgramLanguages.BaseEntityDependency
 {
-    public abstract class EntityDependResolver
+    public abstract class ProgramLanguageDependResolver
     {
-        protected virtual  IPLanguageRepository PLanguageRepository { get; }
+        protected virtual IProgramLanguageRepository PLanguageRepository { get; }
         protected virtual IMapper Mapper { get; }
         protected virtual ProgramLanguageBusinessRules Rules { get; }
 
-        protected EntityDependResolver(IPLanguageRepository languageRepository,
+        protected ProgramLanguageDependResolver(IProgramLanguageRepository languageRepository,
             IMapper mapper,
             ProgramLanguageBusinessRules rules)
         {
@@ -25,6 +25,6 @@ namespace Kodlama.io.Application.Features.ProgramLanguages.BaseEntityDependency
         }
 
 
-      
+
     }
 }

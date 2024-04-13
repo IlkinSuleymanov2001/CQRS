@@ -15,12 +15,12 @@ namespace Kodlama.io.Application.Features.ProgramLanguages.Commands.Update
 
         public class UpdateProgramLanguageCommandHandler : IRequestHandler<UpdateProgramLanguageCommand, UpdatedProgramLanguageDto>
         {
-            private readonly IPLanguageRepository _pLanguageRepository;
+            private readonly IProgramLanguageRepository _pLanguageRepository;
             private readonly IMapper _mapper;
             private readonly ProgramLanguageBusinessRules _rules;
 
             public UpdateProgramLanguageCommandHandler(
-                IPLanguageRepository programmingLanguageRepository
+                IProgramLanguageRepository programmingLanguageRepository
                 ,IMapper mapper,
                 ProgramLanguageBusinessRules programmingLanguageBusinessRules)
             {

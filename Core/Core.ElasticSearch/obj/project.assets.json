@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "Elasticsearch.Net/7.17.0": {
+      "Elasticsearch.Net/7.17.5": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.6.0",
@@ -154,14 +154,14 @@
     }
   },
   "libraries": {
-    "Elasticsearch.Net/7.17.0": {
-      "sha512": "SLySFNBBUjlDxx0GDWgiq0yJ208mCXt37BgvwZ7ZsRdhoWZVmTrro6D9/+KDbu9VXknbRCRUS+QI0C1kaCN3cg==",
+    "Elasticsearch.Net/7.17.5": {
+      "sha512": "orChsQi1Ceho/NyIylNOn6y4vuGcsbCfMZnCueNN0fzqYEGQmQdPfcVmsR5+3fwpXTgxCdjTUVmqOwvHpCSB+Q==",
       "type": "package",
-      "path": "elasticsearch.net/7.17.0",
+      "path": "elasticsearch.net/7.17.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "elasticsearch.net.7.17.0.nupkg.sha512",
+        "elasticsearch.net.7.17.5.nupkg.sha512",
         "elasticsearch.net.nuspec",
         "lib/net461/Elasticsearch.Net.dll",
         "lib/net461/Elasticsearch.Net.pdb",
@@ -485,7 +485,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Elasticsearch.Net >= 7.17.0",
+      "Elasticsearch.Net >= 7.17.5",
       "Microsoft.Extensions.Configuration.Abstractions >= 8.0.0",
       "Microsoft.Extensions.Configuration.Binder >= 8.0.1",
       "NEST >= 7.17.0",
@@ -539,7 +539,7 @@
         "dependencies": {
           "Elasticsearch.Net": {
             "target": "Package",
-            "version": "[7.17.0, )"
+            "version": "[7.17.5, )"
           },
           "Microsoft.Extensions.Configuration.Abstractions": {
             "target": "Package",

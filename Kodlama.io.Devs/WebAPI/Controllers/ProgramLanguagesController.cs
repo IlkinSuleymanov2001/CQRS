@@ -1,6 +1,7 @@
 ﻿using Core.Application.Requests;
 using Kodlama.io.Application.Features.ProgramLanguage.Commands.Create;
-using Kodlama.io.Application.Features.ProgramLanguages.Commands.Delete;
+using Kodlama.io.Application.Features.ProgramLanguages.Commands.Delete.Id;
+using Kodlama.io.Application.Features.ProgramLanguages.Commands.Delete.Name;
 using Kodlama.io.Application.Features.ProgramLanguages.Commands.Update;
 using Kodlama.io.Application.Features.ProgramLanguages.Dtos;
 using Kodlama.io.Application.Features.ProgramLanguages.Models;
@@ -39,7 +40,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete("delete/{Id}")]
-        public async Task<IActionResult> DeleteById([FromRoute] DeleteProgramLanguageCommand reuqest)
+        public async Task<IActionResult> DeleteById([FromRoute] DeleteProgramLanguageByIdCommand reuqest)
         {
             DeleteProgramLanguageDto response = await Mediator.Send(reuqest);
             return Ok(response);

@@ -37,7 +37,7 @@ namespace Kodlama.io.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Brands", (string)null);
+                    b.ToTable("ProgramLanguages", (string)null);
 
                     b.HasData(
                         new
@@ -50,6 +50,61 @@ namespace Kodlama.io.Persistance.Migrations
                             Id = 2,
                             Name = "java"
                         });
+                });
+
+            modelBuilder.Entity("Kodlama.io.Domain.Entities.ProgramLanguageTechnology", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Name");
+
+                    b.Property<int>("ProgramLanguageId")
+                        .HasColumnType("int")
+                        .HasColumnName("ProgramLanguageId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProgramLanguageId");
+
+                    b.ToTable("ProgramLanguageTechnologies", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "entityFramework",
+                            ProgramLanguageId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "spring Boot",
+                            ProgramLanguageId = 2
+                        });
+                });
+
+            modelBuilder.Entity("Kodlama.io.Domain.Entities.ProgramLanguageTechnology", b =>
+                {
+                    b.HasOne("Kodlama.io.Domain.Entities.ProgramLanguage", "ProgramLanguage")
+                        .WithMany("ProgramLanguageTechnology")
+                        .HasForeignKey("ProgramLanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProgramLanguage");
+                });
+
+            modelBuilder.Entity("Kodlama.io.Domain.Entities.ProgramLanguage", b =>
+                {
+                    b.Navigation("ProgramLanguageTechnology");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Kodlama.io.Application.Features.ProgramLanguage.Rules;
-using Kodlama.io.Application.Features.ProgramLanguages.BaseEntityDependency;
 using Kodlama.io.Application.Features.ProgramLanguages.Dtos;
 using Kodlama.io.Application.Services.Repositories;
 using MediatR;
@@ -11,6 +10,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kodlama.io.Application.Features.ProgramLanguages.BaseEntityDependency;
 
 namespace Kodlama.io.Application.Features.ProgramLanguages.Queries.GetById
 {
@@ -19,9 +19,9 @@ namespace Kodlama.io.Application.Features.ProgramLanguages.Queries.GetById
 
        public int Id { get; set; }
 
-       public class GetByIdProgramLanguageQueryHandler :EntityDependResolver, IRequestHandler<GetByIdProgramLanguageQuery, GetByIdProgramLanguageDto>
+       public class GetByIdProgramLanguageQueryHandler :ProgramLanguageDependResolver, IRequestHandler<GetByIdProgramLanguageQuery, GetByIdProgramLanguageDto>
         {
-            public GetByIdProgramLanguageQueryHandler(IPLanguageRepository languageRepository, IMapper mapper, ProgramLanguageBusinessRules rules) 
+            public GetByIdProgramLanguageQueryHandler(IProgramLanguageRepository languageRepository, IMapper mapper, ProgramLanguageBusinessRules rules) 
                 : base(languageRepository, mapper, rules)
             {
             }

@@ -47,7 +47,7 @@
           "dependencies": {
             "Elasticsearch.Net": {
               "target": "Package",
-              "version": "[7.17.0, )"
+              "version": "[7.17.5, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",

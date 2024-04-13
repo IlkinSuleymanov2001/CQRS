@@ -10,9 +10,9 @@ namespace Kodlama.io.Application.Features.ProgramLanguage.Rules
 {
     public class ProgramLanguageBusinessRules
     {
-        private readonly IPLanguageRepository _pLanguageRepository;
+        private readonly IProgramLanguageRepository _pLanguageRepository;
 
-        public ProgramLanguageBusinessRules(IPLanguageRepository pLanguageRepository)
+        public ProgramLanguageBusinessRules(IProgramLanguageRepository pLanguageRepository)
         {
             _pLanguageRepository = pLanguageRepository;
         }

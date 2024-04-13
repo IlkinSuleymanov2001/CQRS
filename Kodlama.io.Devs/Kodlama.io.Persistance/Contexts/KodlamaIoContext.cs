@@ -8,6 +8,7 @@ namespace Kodlama.io.Persistance.Contexts
 
         public IConfiguration Configuration { get; set; }
         public DbSet<ProgramLanguage> ProgramLanguages { get; set; }
+        public DbSet<ProgramLanguageTechnology> ProgramLanguagesTechnologies { get; set; }    
 
         public KodlamaIoContext(DbContextOptions options, IConfiguration configuration) : base(options)
         {
@@ -16,7 +17,6 @@ namespace Kodlama.io.Persistance.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-           //
         }
 
 
@@ -26,11 +26,23 @@ namespace Kodlama.io.Persistance.Contexts
                 a.ToTable("ProgramLanguages").HasKey(k => k.Id);
                 a.Property(p => p.Id).HasColumnName("Id");
                 a.Property(p => p.Name).HasColumnName("Name");
+                a.HasMany(p => p.ProgramLanguageTechnology);
+            });
+
+            modelBuilder.Entity<ProgramLanguageTechnology>(a => {
+                a.ToTable("ProgramLanguageTechnologies").HasKey(k => k.Id);
+                a.Property(p => p.Id).HasColumnName("Id");
+                a.Property(p => p.ProgramLanguageId).HasColumnName("ProgramLanguageId");
+                a.Property(p => p.Name).HasColumnName("Name");
+                a.HasOne(p=>p.ProgramLanguage);
             });
 
             ProgramLanguage[] programLanguageDataSeed = { new(1,"C#") ,new(2,"java")  };
             modelBuilder.Entity<ProgramLanguage>().HasData(programLanguageDataSeed);
 
+            ProgramLanguageTechnology[] programLanguageTechnologyDataSeed = { new(1, "entityFramework",1),
+                new(2, "spring Boot",2) };
+            modelBuilder.Entity<ProgramLanguageTechnology>().HasData(programLanguageTechnologyDataSeed);
         }
 
 

@@ -18,8 +18,9 @@ namespace Kodlama.io.Persistance
                 options.UseSqlServer(configuration.GetConnectionString("Kodlamaio"));
             });
 
-            services.AddScoped<IPLanguageRepository,PLanguageRepository>();
-
+            services.AddScoped<IProgramLanguageRepository,PorgramLanguageRepository>();
+            services.AddScoped<IProgramLanguageTechnologyRepository, ProgramLanguageTechnologyRepository>();
+           
             return services;
         }
     }

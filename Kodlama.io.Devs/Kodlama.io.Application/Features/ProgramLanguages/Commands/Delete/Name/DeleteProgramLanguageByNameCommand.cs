@@ -10,22 +10,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kodlama.io.Application.Features.ProgramLanguages.Commands.Delete
+namespace Kodlama.io.Application.Features.ProgramLanguages.Commands.Delete.Name
 {
-    public  class DeleteProgramLanguageByNameCommand:IRequest<DeleteProgramLanguageDto>
+    public class DeleteProgramLanguageByNameCommand : IRequest<DeleteProgramLanguageDto>
     {
-        public string Name  { get; set; }
+        public string Name { get; set; }
 
 
-        public class DeleteProgramLanguageByNameCommandHandler : EntityDependResolver, IRequestHandler<DeleteProgramLanguageByNameCommand,
+        public class DeleteProgramLanguageByNameCommandHandler : ProgramLanguageDependResolver, IRequestHandler<DeleteProgramLanguageByNameCommand,
             DeleteProgramLanguageDto>
         {
             public DeleteProgramLanguageByNameCommandHandler(
-                IPLanguageRepository languageRepository,
+                IProgramLanguageRepository languageRepository,
                 IMapper mapper,
                 ProgramLanguageBusinessRules rules) :
                 base(languageRepository, mapper, rules)
-            {}
+            { }
 
             public async Task<DeleteProgramLanguageDto> Handle(DeleteProgramLanguageByNameCommand request, CancellationToken cancellationToken)
             {

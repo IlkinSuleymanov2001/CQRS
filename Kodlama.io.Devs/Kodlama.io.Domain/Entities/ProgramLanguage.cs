@@ -10,7 +10,7 @@ namespace Kodlama.io.Domain.Entities
     public  class ProgramLanguage:Entity
     {
         public string Name { get; set; }
-
+        public virtual ICollection<ProgramLanguageTechnology> ProgramLanguageTechnology { get; set; }  
         public ProgramLanguage()
         {
             

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Kodlama.io.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9832af8950f15df960ef30785071a16fd7b9867e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26391397d011cd2f886e5bfa7142c9b0bed26486")]
 [assembly: System.Reflection.AssemblyProductAttribute("Kodlama.io.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Kodlama.io.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

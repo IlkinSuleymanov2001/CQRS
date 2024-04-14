@@ -32,14 +32,16 @@ namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Commands.U
             public async Task<UpdateProgramLanguageTechnologyDto> Handle(
                 UpdateProgramLanguageTechnologyCommand request, CancellationToken cancellationToken)
             {
-                await Rules.CheckTechnologyExistsWhenRequested(request.Id);
+                //await Rules.CheckTechnologyExistsWhenRequested(request.Id);
                 await Rules.ProgramLanguageExistsWhenTechnologyUpdated(request);
+                await Rules.TechnologyNameCanNotBeDuplicatedWhenRequested(request.Name);
 
                 var mappedEntity = Mapper.Map<ProgramLanguageTechnology>(request);
                 var updatedEntity = await TechnologyRepository.UpdateAsync(mappedEntity);
-                var joinedEntity = await TechnologyRepository.GetByIdFullTechnologyData(updatedEntity.Id);
 
-                var dto =Mapper.Map<UpdateProgramLanguageTechnologyDto>(joinedEntity);
+                Rules.CheckNullRefereance(updatedEntity);
+
+                var dto =Mapper.Map<UpdateProgramLanguageTechnologyDto>(updatedEntity);
 
                 return dto; 
             }

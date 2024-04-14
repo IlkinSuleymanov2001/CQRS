@@ -25,5 +25,13 @@ namespace Kodlama.io.Persistance.Repositories
 
            return technology;
         }
+
+        public async Task<ProgramLanguageTechnology> GetByNameFullTechnologyData(string name)
+        {
+            ProgramLanguageTechnology? technology = await GetAsync(p => p.Name == name,
+                           include: ef => ef.Include(c => c.ProgramLanguage));
+
+            return technology;
+        }
     }
 }

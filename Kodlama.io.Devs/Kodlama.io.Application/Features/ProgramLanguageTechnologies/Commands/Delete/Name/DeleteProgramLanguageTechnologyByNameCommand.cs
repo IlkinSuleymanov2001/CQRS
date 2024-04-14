@@ -32,12 +32,9 @@ namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Commands.D
             public async Task<DeleteProgramLanguageTechnologyDto> Handle(DeleteProgramLanguageTechnologyByNameCommand request, CancellationToken cancellationToken)
             {
                 await Rules.CheckTechnologyExistsWhenRequested(request.Name);
-                var entity  = await TechnologyRepository.
-                     GetAsync(p => p.Name == request.Name,
-                              include: ef => ef.Include(c => c.ProgramLanguage));
-
-                 await TechnologyRepository.DeleteAsync(entity);
-                 DeleteProgramLanguageTechnologyDto dto = Mapper.Map<DeleteProgramLanguageTechnologyDto>(entity);
+                var entity  = await TechnologyRepository.GetByNameFullTechnologyData(request.Name);
+                await TechnologyRepository.DeleteAsync(entity);
+                DeleteProgramLanguageTechnologyDto dto = Mapper.Map<DeleteProgramLanguageTechnologyDto>(entity);
 
                 return dto;
             }

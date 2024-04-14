@@ -17,11 +17,14 @@ namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Profiles
         {
             CreateMap<ProgramLanguageTechnology, CreateProgramLanguageTechnologyCommand>().ReverseMap();
             CreateMap<ProgramLanguageTechnology, CreateProgramLanguageTechnologyDto>().ForMember(c => c.ProgramLanguageName,opt => opt.MapFrom(c => c.ProgramLanguage.Name)).ReverseMap();
+           
             CreateMap<ProgramLanguageTechnology, DeleteProgramLanguageTechnologyDto>().ForMember(c => c.ProgramLanguageName,opt => opt.MapFrom(c => c.ProgramLanguage.Name)).ReverseMap();
+            
             CreateMap<ProgramLanguageTechnology, UpdateProgramLanguageTechnologyCommand>().ReverseMap();
             CreateMap<ProgramLanguageTechnology, UpdateProgramLanguageTechnologyDto>().ForMember(c => c.ProgramLanguageName, opt => opt.MapFrom(c => c.ProgramLanguage.Name)).ReverseMap();
+            
             CreateMap<ProgramLanguageTechnology, GetByIdProgramLanguageTechnologyDto>().ForMember(c => c.ProgramLanguageName, opt => opt.MapFrom(c => c.ProgramLanguage.Name)).ReverseMap();
-            CreateMap<IPaginate<ProgramLanguageTechnology>, GetListTechnologyModel>().ReverseMap();
+            CreateMap<IPaginate<ProgramLanguageTechnology>, TechnologyListModel>().ReverseMap();
             CreateMap<ProgramLanguageTechnology, GetListProgramLanguageTechnologyDto>().ForMember(c => c.ProgramLanguageName, opt => opt.MapFrom(c => c.ProgramLanguage.Name)).ReverseMap();
 
         }

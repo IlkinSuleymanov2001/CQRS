@@ -12,5 +12,7 @@ namespace Kodlama.io.Application.Services.Repositories
         IAsyncRepository<ProgramLanguageTechnology>
     {
         public Task<ProgramLanguageTechnology> GetByIdFullTechnologyData(int id);
+
+        public Task<ProgramLanguageTechnology> GetByNameFullTechnologyData(string  name);
     }
 }

@@ -29,7 +29,7 @@ namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Commands.C
 
             public async Task<CreateProgramLanguageTechnologyDto> Handle(CreateProgramLanguageTechnologyCommand request, CancellationToken cancellationToken)
             {
-                await Rules.TechnologyNameCanNotBeDuplicatedWhenInserted(request.Name);
+                await Rules.TechnologyNameCanNotBeDuplicatedWhenRequested(request.Name);
 
                 var entity  =  Mapper.Map<ProgramLanguageTechnology>(request);
                 var addedEntity = await  TechnologyRepository.AddAsync(entity);

@@ -4,6 +4,7 @@ using Kodlama.io.Application.Features.ProgramLanguageTechnologies.Dtos;
 using Kodlama.io.Application.Features.ProgramLanguageTechnologies.Rules;
 using Kodlama.io.Application.Services.Repositories;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,7 @@ namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Queries.Ge
             public async Task<GetByIdProgramLanguageTechnologyDto> Handle(GetByIdProgramLanguageTechnologyQuery request, CancellationToken cancellationToken)
             {
                 await Rules.CheckTechnologyExistsWhenRequested(request.Id);
-                var technology  = await TechnologyRepository.GetByIdFullTechnologyData(request.Id);
+                var technology = await TechnologyRepository.GetByIdFullTechnologyData(request.Id);
                 var response  = Mapper.Map<GetByIdProgramLanguageTechnologyDto>(technology);
                 return response;
             }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Core.CrossCuttingConcerns.Exceptions;
 using Kodlama.io.Application.Features.ProgramLanguageTechnologies.BaseEntityDependency;
 using Kodlama.io.Application.Features.ProgramLanguageTechnologies.Dtos;
 using Kodlama.io.Application.Features.ProgramLanguageTechnologies.Rules;
@@ -30,12 +31,8 @@ namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Commands.D
             public async Task<DeleteProgramLanguageTechnologyDto> Handle(DeleteProgramLanguageTechnologyByIdCommand request, CancellationToken cancellationToken)
             {
                 await Rules.CheckTechnologyExistsWhenRequested(request.Id);
-
-                var entity = await TechnologyRepository.
-                     GetAsync(p => p.Id == request.Id,
-                              include: ef => ef.Include(c => c.ProgramLanguage));
-
-                await TechnologyRepository.DeleteAsync(entity);
+                var entity = await TechnologyRepository.GetByIdFullTechnologyData(request.Id);
+                var deletedEntity =await TechnologyRepository.DeleteAsync(entity);
 
                 DeleteProgramLanguageTechnologyDto dto = Mapper.Map<DeleteProgramLanguageTechnologyDto>(entity);
 

@@ -20,18 +20,18 @@ namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Rules
         }
 
 
-        public async Task TechnologyNameCanNotBeDuplicatedWhenInserted(string name)
+        public async Task TechnologyNameCanNotBeDuplicatedWhenRequested(string name)
         {
-            var  technology = await _technologyRepository.GetAsync(pl => pl.Name == name);
-            if (technology != null)
+            var technologies = await _technologyRepository.GetListAsync(pl => pl.Name == name);
+            if (technologies.Items.Any())
             {
-                throw new BusinessException("Technology  Name Exists");
+                throw new BusinessException("Technology Name Exists");
             }
         }
         public async Task CheckTechnologyExistsWhenRequested(int  id)
         {
             var technologies  = await _technologyRepository.GetListAsync(pl => pl.Id == id);
-            if (technologies.Count==0)
+            if (!technologies.Items.Any())
             {
                 throw new BusinessException("technology doesnt not exists");
             }
@@ -40,7 +40,7 @@ namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Rules
         public async Task CheckTechnologyExistsWhenRequested(string  name)
         {
             var technologies = await _technologyRepository.GetListAsync(pl => pl.Name == name);
-            if (technologies.Count == 0)
+            if (!technologies.Items.Any())
             {
                 throw new BusinessException("technology doesnt not exists");
             }
@@ -49,12 +49,20 @@ namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Rules
 
         public async Task ProgramLanguageExistsWhenTechnologyUpdated(UpdateProgramLanguageTechnologyCommand request)
         {
-
             var  language =  await _languageRepository.GetAsync(c => c.Id == request.ProgramLanguageId);
             if (language == null)
             {
                 throw new BusinessException("language doest not exists..");
             }
+        }
+
+        public void CheckNullRefereance(ProgramLanguageTechnology technology) 
+        {
+            if (technology == null)
+            {
+                throw new BusinessException("technology doest not exists..");
+            }
+        
         }
 
 

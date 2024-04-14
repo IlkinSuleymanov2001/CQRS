@@ -16,19 +16,19 @@ using System.Threading.Tasks;
 
 namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Queries.GetList
 {
-    public  class GetListProgramLanguageTechnologyQuery :IRequest<GetListTechnologyModel>
+    public  class GetListProgramLanguageTechnologyQuery :IRequest<TechnologyListModel>
     {
         public PageRequest PageRequest { get; set; }
 
         public class GetListProgramLanguageTechnologyQueryHandler :
             ProgramLanguageTechnologyDependResolver,
-            IRequestHandler<GetListProgramLanguageTechnologyQuery, GetListTechnologyModel>
+            IRequestHandler<GetListProgramLanguageTechnologyQuery, TechnologyListModel>
         {
             public GetListProgramLanguageTechnologyQueryHandler(IProgramLanguageTechnologyRepository technologyRepository, IMapper mapper, ProgramLanguageTechnologyBusinessRules rules) : base(technologyRepository, mapper, rules)
             {
             }
 
-            public async Task<GetListTechnologyModel> Handle(GetListProgramLanguageTechnologyQuery request, CancellationToken cancellationToken)
+            public async Task<TechnologyListModel> Handle(GetListProgramLanguageTechnologyQuery request, CancellationToken cancellationToken)
             {
               IPaginate<ProgramLanguageTechnology> paginate =  
                     await TechnologyRepository.GetListAsync(
@@ -37,7 +37,7 @@ namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Queries.Ge
                     size:request.PageRequest.PageSize
                     );;
 
-                var getListModel = Mapper.Map<GetListTechnologyModel>(paginate);
+                var getListModel = Mapper.Map<TechnologyListModel>(paginate);
 
                 return getListModel;
             }

@@ -10,6 +10,6 @@ namespace Kodlama.io.Application.Features.ProgramLanguages.Models
 {
     public  class ProgramLanguageListModel:BasePageableModel
     {
-        public IList<GetAllProgramLanguageDto> Items { get; set; }
+        public IList<GetListProgramLanguageDto> Items { get; set; }
     }
 }

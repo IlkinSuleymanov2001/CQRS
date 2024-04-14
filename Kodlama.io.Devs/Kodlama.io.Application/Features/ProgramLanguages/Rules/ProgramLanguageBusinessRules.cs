@@ -17,7 +17,7 @@ namespace Kodlama.io.Application.Features.ProgramLanguage.Rules
             _pLanguageRepository = pLanguageRepository;
         }
 
-        public async  Task  LanguageNameCanNotBeDuplicatedWhenInserted(string languageName ) 
+        public async  Task  LanguageNameCanNotBeDuplicatedWhenRequested(string languageName ) 
         {
            Domain.Entities.ProgramLanguage langauge =  await _pLanguageRepository.GetAsync(pl => pl.Name == languageName);
             if (langauge != null)

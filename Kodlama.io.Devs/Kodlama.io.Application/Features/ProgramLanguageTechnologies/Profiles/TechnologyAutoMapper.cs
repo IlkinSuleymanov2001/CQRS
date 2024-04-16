@@ -11,9 +11,9 @@ using Kodlama.io.Domain.Entities;
 
 namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.Profiles
 {
-    public class CustomAutoMapper : Profile
+    public class TechnologyAutoMapper : Profile
     {
-        public CustomAutoMapper()
+        public TechnologyAutoMapper()
         {
             CreateMap<ProgramLanguageTechnology, CreateProgramLanguageTechnologyCommand>().ReverseMap();
             CreateMap<ProgramLanguageTechnology, CreateProgramLanguageTechnologyDto>().ForMember(c => c.ProgramLanguageName,opt => opt.MapFrom(c => c.ProgramLanguage.Name)).ReverseMap();

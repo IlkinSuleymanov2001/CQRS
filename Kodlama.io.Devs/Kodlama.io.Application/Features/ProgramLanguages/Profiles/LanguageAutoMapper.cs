@@ -9,10 +9,10 @@ using PLanguage = Kodlama.io.Domain.Entities.ProgramLanguage;
 
 namespace Kodlama.io.Application.Features.ProgramLanguages.Profiles
 {
-    public  class CustomAutoMapper : Profile
+    public  class LanguageAutoMapper : Profile
     {
 
-        public CustomAutoMapper()
+        public LanguageAutoMapper()
         {
             CreateMap<PLanguage, CreateProgramLanguageCommand>().ReverseMap();
             CreateMap<PLanguage, CreateProgramLanguageDto>().ReverseMap();

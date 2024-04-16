@@ -2,6 +2,7 @@
 using FluentValidation;
 using Kodlama.io.Application.Features.ProgramLanguage.Rules;
 using Kodlama.io.Application.Features.ProgramLanguageTechnologies.Rules;
+using Kodlama.io.Application.Features.Users.Rules;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -24,6 +25,8 @@ namespace Kodlama.io.Application
 
             services.AddScoped<ProgramLanguageBusinessRules>();
             services.AddScoped<ProgramLanguageTechnologyBusinessRules>();
+            services.AddScoped<UserBusinessRoles>();
+
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
 
             return services;

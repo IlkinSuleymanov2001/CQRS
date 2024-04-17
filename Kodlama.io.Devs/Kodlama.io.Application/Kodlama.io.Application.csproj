@@ -22,9 +22,8 @@
   <ItemGroup>
     <Folder Include="Features\ProgramLanguages\Constants\" />
     <Folder Include="Features\ProgramLanguageTechnologies\Constants\" />
-    <Folder Include="Features\SecurityFeatures\Auths\" />
-    <Folder Include="Features\SecurityFeatures\UserOperationClaims\" />
-    <Folder Include="Features\SecurityFeatures\OperationClaims\" />
+    <Folder Include="Features\UserOperationClaims\" />
+    <Folder Include="Features\OperationClaims\" />
     <Folder Include="Features\Users\Queries\GetList\Dynamic\" />
   </ItemGroup>
 

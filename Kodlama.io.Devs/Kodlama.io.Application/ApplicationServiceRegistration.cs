@@ -1,7 +1,9 @@
-﻿using Core.Application.Pipelines.Validation;
+﻿using Application;
+using Core.Application.Pipelines.Validation;
 using FluentValidation;
 using Kodlama.io.Application.Features.ProgramLanguage.Rules;
 using Kodlama.io.Application.Features.ProgramLanguageTechnologies.Rules;
+using Kodlama.io.Application.Features.Users.Authentications.Rules;
 using Kodlama.io.Application.Features.Users.Rules;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,7 +27,10 @@ namespace Kodlama.io.Application
 
             services.AddScoped<ProgramLanguageBusinessRules>();
             services.AddScoped<ProgramLanguageTechnologyBusinessRules>();
-            services.AddScoped<UserBusinessRoles>();
+            services.AddScoped<UserBusinessRules>();
+            services.AddScoped<AuthBusinessRoles>();
+            services.AddSecurityServices();
+
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
 

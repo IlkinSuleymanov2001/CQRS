@@ -23,7 +23,7 @@ namespace Kodlama.io.Application.Features.Users.Commands.Delete.Id
             UserDependResolver,
             IRequestHandler<DeleteUserByIdCommand, DeletedUserDto>
         {
-            public DeleteUserCommandHandler(IUserRepository userRepository, IMapper mapper, UserBusinessRoles roles) : base(userRepository, mapper, roles)
+            public DeleteUserCommandHandler(IUserRepository userRepository, IMapper mapper, UserBusinessRules roles) : base(userRepository, mapper, roles)
             {
             }
 

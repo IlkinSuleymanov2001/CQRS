@@ -35,7 +35,7 @@ namespace Kodlama.io.Application.Features.Users.Commands.Create
             public CreateUserCommandHandler(
                 IUserRepository userRepository, 
                 IMapper mapper,
-                UserBusinessRoles roles) : 
+                UserBusinessRules roles) : 
                 base(userRepository, mapper, roles)
             {
             }

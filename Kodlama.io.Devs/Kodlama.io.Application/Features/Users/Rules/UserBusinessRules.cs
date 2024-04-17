@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Kodlama.io.Application.Features.Users.Rules
 {
-    public  class UserBusinessRoles
+    public  class UserBusinessRules
     {
         private IUserRepository _userRepository;
-        public UserBusinessRoles(IUserRepository userRepository)
+        public UserBusinessRules(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }

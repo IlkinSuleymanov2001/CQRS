@@ -21,7 +21,7 @@ namespace Kodlama.io.Application.Features.Users.Queries.GetList
 
         public class GetListUserQueryHandler : UserDependResolver, IRequestHandler<GetListUserQuery, UserListModel>
         {
-            public GetListUserQueryHandler(IUserRepository userRepository, IMapper mapper, UserBusinessRoles roles) : base(userRepository, mapper, roles)
+            public GetListUserQueryHandler(IUserRepository userRepository, IMapper mapper, UserBusinessRules roles) : base(userRepository, mapper, roles)
             {
             }
 

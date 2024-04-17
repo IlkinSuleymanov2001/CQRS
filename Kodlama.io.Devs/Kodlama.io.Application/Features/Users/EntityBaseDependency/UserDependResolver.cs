@@ -13,10 +13,10 @@ namespace Kodlama.io.Application.Features.Users.EntityBaseDependency
     {
         protected IUserRepository UserRepository { get; set; }
         protected IMapper Mapper { get; set; }
-        protected UserBusinessRoles Rules { get; set; }
+        protected UserBusinessRules Rules { get; set; }
 
 
-        public UserDependResolver(IUserRepository userRepository, IMapper mapper, UserBusinessRoles roles)
+        public UserDependResolver(IUserRepository userRepository, IMapper mapper, UserBusinessRules roles)
         {
             UserRepository = userRepository;
             Mapper = mapper;

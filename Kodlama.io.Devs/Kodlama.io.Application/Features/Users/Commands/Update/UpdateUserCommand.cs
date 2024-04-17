@@ -30,7 +30,7 @@ namespace Kodlama.io.Application.Features.Users.Commands.Update
             public UpdateUserCommandHandler(
                 IUserRepository userRepository,
                 IMapper mapper,
-                UserBusinessRoles roles) :
+                UserBusinessRules roles) :
                 base(userRepository, mapper, roles)
             {}
 

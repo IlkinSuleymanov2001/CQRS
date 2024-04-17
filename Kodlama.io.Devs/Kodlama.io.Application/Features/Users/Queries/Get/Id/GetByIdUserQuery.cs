@@ -19,7 +19,7 @@ namespace Kodlama.io.Application.Features.Users.Queries.Get.GetById
         public int Id { get; set; }
         public class GetByIdUserQueryHandler : UserDependResolver, IRequestHandler<GetByIdUserQuery, GetSingleUserDto>
         {
-            public GetByIdUserQueryHandler(IUserRepository userRepository, IMapper mapper, UserBusinessRoles roles) : base(userRepository, mapper, roles)
+            public GetByIdUserQueryHandler(IUserRepository userRepository, IMapper mapper, UserBusinessRules roles) : base(userRepository, mapper, roles)
             {
             }
 

@@ -1,4 +1,5 @@
 ﻿using Core.Security.Entities;
+using Core.Security.Enums;
 using Core.Security.Hashing;
 using System;
 using System.Collections.Generic;
@@ -19,10 +20,11 @@ namespace Kodlama.io.Application.Features.Users.Helpers
             return user;
         }
 
-        public static void SetUserStatusWhenCreated(User user)
-        {
-            user.Status = false;
-        }
+        public static void SetUserStatusWhenCreated(User user, bool status=false)
+          => user.Status = status;
+
+        public static void DefaultAuthenticatorType(User user)
+            => user.AuthenticatorType = AuthenticatorType.None;
 
     }
 }

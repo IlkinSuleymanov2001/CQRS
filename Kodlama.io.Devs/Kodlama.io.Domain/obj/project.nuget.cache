@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EHPXig5ecKbrMB3I4AWr4MTaTeurs+sVY74bpoT0GsgqqMh9dQw+ztNyKCzviywoP30Mq+5SeDknurDtZYiVBw==",
+  "dgSpecHash": "sCikcngFMgTaPSEAVK/5tBpj/nV+yWtOZmJqCSdeGgbU96D8dBMdilXEVjXgDD6o/QE9BylFdB3ZFkKsibpzlQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\ilkin\\source\\repos\\ilkin\\Kodlama.io.Devs\\Kodlama.io.Devs\\Kodlama.io.Domain\\Kodlama.io.Domain.csproj",
   "expectedPackageFiles": [
@@ -9,12 +9,20 @@
     "C:\\Users\\ilkin\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.3\\microsoft.entityframeworkcore.analyzers.8.0.3.nupkg.sha512",
     "C:\\Users\\ilkin\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\ilkin\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.0\\microsoft.extensions.caching.memory.8.0.0.nupkg.sha512",
+    "C:\\Users\\ilkin\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\ilkin\\.nuget\\packages\\microsoft.extensions.configuration.binder\\8.0.1\\microsoft.extensions.configuration.binder.8.0.1.nupkg.sha512",
     "C:\\Users\\ilkin\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\ilkin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\ilkin\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0\\microsoft.extensions.logging.8.0.0.nupkg.sha512",
     "C:\\Users\\ilkin\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\ilkin\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
     "C:\\Users\\ilkin\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\ilkin\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.5.1\\microsoft.identitymodel.abstractions.7.5.1.nupkg.sha512",
+    "C:\\Users\\ilkin\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.5.1\\microsoft.identitymodel.jsonwebtokens.7.5.1.nupkg.sha512",
+    "C:\\Users\\ilkin\\.nuget\\packages\\microsoft.identitymodel.logging\\7.5.1\\microsoft.identitymodel.logging.7.5.1.nupkg.sha512",
+    "C:\\Users\\ilkin\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.5.1\\microsoft.identitymodel.tokens.7.5.1.nupkg.sha512",
+    "C:\\Users\\ilkin\\.nuget\\packages\\otp.net\\1.4.0\\otp.net.1.4.0.nupkg.sha512",
+    "C:\\Users\\ilkin\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.5.1\\system.identitymodel.tokens.jwt.7.5.1.nupkg.sha512",
     "C:\\Users\\ilkin\\.nuget\\packages\\system.linq.dynamic.core\\1.3.10\\system.linq.dynamic.core.1.3.10.nupkg.sha512"
   ],
   "logs": []

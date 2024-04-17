@@ -17,10 +17,11 @@ namespace Kodlama.io.Persistance
             {
                 options.UseSqlServer(configuration.GetConnectionString("Kodlamaio"));
             });
-
+            //all repository services using  in the  project 
             services.AddScoped<IProgramLanguageRepository,PorgramLanguageRepository>();
             services.AddScoped<IProgramLanguageTechnologyRepository, ProgramLanguageTechnologyRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserSocialMediaRepository, UserSocialMediaRepository>();
 
             return services;
         }

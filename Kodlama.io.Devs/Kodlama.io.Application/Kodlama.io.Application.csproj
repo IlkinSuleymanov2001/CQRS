@@ -20,10 +20,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\OperationClaims\Commands\" />
+    <Folder Include="Features\OperationClaims\Dtos\" />
+    <Folder Include="Features\OperationClaims\EntityBaseDependency\" />
+    <Folder Include="Features\OperationClaims\Models\" />
+    <Folder Include="Features\OperationClaims\Profiles\" />
+    <Folder Include="Features\OperationClaims\Queries\" />
+    <Folder Include="Features\OperationClaims\Rules\" />
     <Folder Include="Features\ProgramLanguages\Constants\" />
     <Folder Include="Features\ProgramLanguageTechnologies\Constants\" />
-    <Folder Include="Features\UserOperationClaims\" />
-    <Folder Include="Features\OperationClaims\" />
+    <Folder Include="Features\UserOperationClaims\Commands\" />
+    <Folder Include="Features\UserOperationClaims\Dtos\" />
+    <Folder Include="Features\UserOperationClaims\EntityBaseDependency\" />
+    <Folder Include="Features\UserOperationClaims\Models\" />
+    <Folder Include="Features\UserOperationClaims\Profiles\" />
+    <Folder Include="Features\UserOperationClaims\Queries\" />
+    <Folder Include="Features\UserOperationClaims\Rules\" />
+    <Folder Include="Features\UserSocialMedias\Commands\Delete\" />
+    <Folder Include="Features\UserSocialMedias\Commands\Update\" />
+    <Folder Include="Features\UserSocialMedias\Models\" />
+    <Folder Include="Features\UserSocialMedias\Queries\GetByUserId\" />
+    <Folder Include="Features\UserSocialMedias\Queries\GetList\" />
     <Folder Include="Features\Users\Queries\GetList\Dynamic\" />
   </ItemGroup>
 

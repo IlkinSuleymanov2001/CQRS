@@ -295,6 +295,36 @@ namespace Kodlama.io.Persistance.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Kodlama.io.Domain.Entities.UserSocialMedia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("SocialMediaLink")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("SocialMediaLink");
+
+                    b.Property<string>("SocialMediaName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("SocialMediaName");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int")
+                        .HasColumnName("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserSocialMedias", (string)null);
+                });
+
             modelBuilder.Entity("Core.Security.Entities.EmailAuthenticator", b =>
                 {
                     b.HasOne("Core.Security.Entities.User", "User")
@@ -356,6 +386,17 @@ namespace Kodlama.io.Persistance.Migrations
                         .IsRequired();
 
                     b.Navigation("ProgramLanguage");
+                });
+
+            modelBuilder.Entity("Kodlama.io.Domain.Entities.UserSocialMedia", b =>
+                {
+                    b.HasOne("Core.Security.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Core.Security.Entities.User", b =>

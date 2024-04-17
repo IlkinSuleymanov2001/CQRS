@@ -450,6 +450,9 @@
             "projectReferences": {
               "C:\\Users\\ilkin\\source\\repos\\ilkin\\Kodlama.io.Devs\\Core\\Core.Persistence\\Core.Persistence.csproj": {
                 "projectPath": "C:\\Users\\ilkin\\source\\repos\\ilkin\\Kodlama.io.Devs\\Core\\Core.Persistence\\Core.Persistence.csproj"
+              },
+              "C:\\Users\\ilkin\\source\\repos\\ilkin\\Kodlama.io.Devs\\Core\\Core.Security\\Core.Security.csproj": {
+                "projectPath": "C:\\Users\\ilkin\\source\\repos\\ilkin\\Kodlama.io.Devs\\Core\\Core.Security\\Core.Security.csproj"
               }
             }
           }

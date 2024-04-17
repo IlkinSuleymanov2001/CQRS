@@ -5,6 +5,7 @@ using Kodlama.io.Application.Features.ProgramLanguage.Rules;
 using Kodlama.io.Application.Features.ProgramLanguageTechnologies.Rules;
 using Kodlama.io.Application.Features.Users.Authentications.Rules;
 using Kodlama.io.Application.Features.Users.Rules;
+using Kodlama.io.Application.Features.UserSocialMedias.Rules;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -29,6 +30,7 @@ namespace Kodlama.io.Application
             services.AddScoped<ProgramLanguageTechnologyBusinessRules>();
             services.AddScoped<UserBusinessRules>();
             services.AddScoped<AuthBusinessRoles>();
+            services.AddScoped<UserSocialMediaBusinessRules>();
             services.AddSecurityServices();
 
 

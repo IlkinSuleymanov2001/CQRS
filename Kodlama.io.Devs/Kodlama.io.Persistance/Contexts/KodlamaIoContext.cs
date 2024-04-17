@@ -10,6 +10,7 @@ namespace Kodlama.io.Persistance.Contexts
         public IConfiguration Configuration { get; set; }
         public DbSet<ProgramLanguage> ProgramLanguages { get; set; }
         public DbSet<ProgramLanguageTechnology> ProgramLanguagesTechnologies { get; set; }
+        public DbSet<UserSocialMedia> UserSocialMedias { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
@@ -106,6 +107,14 @@ namespace Kodlama.io.Persistance.Contexts
                 a.HasOne(p => p.User);
             });
 
+            modelBuilder.Entity<UserSocialMedia>(a => {
+                a.ToTable("UserSocialMedias").HasKey(k => k.Id);
+                a.Property(p => p.Id).HasColumnName("Id");
+                a.Property(p => p.UserId).HasColumnName("UserId");
+                a.Property(p => p.SocialMediaName).HasColumnName("SocialMediaName");
+                a.Property(p => p.SocialMediaLink).HasColumnName("SocialMediaLink");
+                a.HasOne(p => p.User);
+            });
 
             ProgramLanguage[] programLanguageDataSeed = { new(1,"C#") ,new(2,"java")  };
             modelBuilder.Entity<ProgramLanguage>().HasData(programLanguageDataSeed);

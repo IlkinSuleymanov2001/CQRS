@@ -1,10 +1,4 @@
-﻿using Core.Security.Entities;
-using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
 
 namespace Kodlama.io.Application.Features.Users.Commands.Update
 {
@@ -18,9 +12,8 @@ namespace Kodlama.io.Application.Features.Users.Commands.Update
             RuleFor(c => c.LastName).NotEmpty();
             RuleFor(c => c.Email).NotEmpty();
             RuleFor(c => c.Email).EmailAddress();
-            RuleFor(c=>c.Password).NotEmpty();
+            RuleFor(c => c.Password).NotEmpty();
             RuleFor(c => c.Password).MinimumLength(8);
-
 
 
         }

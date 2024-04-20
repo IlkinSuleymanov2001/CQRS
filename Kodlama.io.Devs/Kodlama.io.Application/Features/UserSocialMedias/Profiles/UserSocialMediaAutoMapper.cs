@@ -16,10 +16,17 @@ namespace Kodlama.io.Application.Features.UserSocialMedias.Profiles
         public UserSocialMediaAutoMapper()
         {
             CreateMap<UserSocialMedia, CreateUserSocialMediaCommand>().ReverseMap();
-            CreateMap<UserSocialMedia, CreateUserSocialMediaDto>().ReverseMap();
+            CreateMap<UserSocialMedia, CreatedUserSocialMediaDto>().
+                ForMember(c=>c.SocialMediaName,opt=>opt.MapFrom(c=>c.SocialMedia.SocialMediaName)).
+                ForMember(c => c.FirstName, opt => opt.MapFrom(c => c.User.FirstName)).
+                ForMember(c => c.LastName, opt => opt.MapFrom(c => c.User.LastName)).
+                ForMember(c => c.Email, opt => opt.MapFrom(c => c.User.Email)).ReverseMap();
 
-            CreateMap<UserSocialMedia, GetByIdSocialMediaDto>().ReverseMap();
+            CreateMap<UserSocialMedia, GetByIdUserSocialMediaDto>().
+                ForMember(c => c.SocialMediaName, opt => opt.MapFrom(c => c.SocialMedia.SocialMediaName)).ReverseMap();
 
+            CreateMap<UserSocialMedia, DeletedUserSocialMediaDto>().
+               ForMember(c => c.SocialMediaName, opt => opt.MapFrom(c => c.SocialMedia.SocialMediaName)).ReverseMap();
         }
     }
 }

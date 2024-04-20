@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kodlama.io.Persistance.Migrations
 {
     [DbContext(typeof(KodlamaIoContext))]
-    [Migration("20240415081204_Add-Core_Security_Entities")]
-    partial class AddCore_Security_Entities
+    [Migration("20240419212102_mig_1")]
+    partial class mig_1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -298,6 +298,56 @@ namespace Kodlama.io.Persistance.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Kodlama.io.Domain.Entities.SocialMedia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("SocialMediaName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("SocialMediaName");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SocialMedias", (string)null);
+                });
+
+            modelBuilder.Entity("Kodlama.io.Domain.Entities.UserSocialMedia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("SocialMediaId")
+                        .HasColumnType("int")
+                        .HasColumnName("SocialMediaId");
+
+                    b.Property<string>("SocialMediaLink")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("SocialMediaLink");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int")
+                        .HasColumnName("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SocialMediaId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserSocialMedias", (string)null);
+                });
+
             modelBuilder.Entity("Core.Security.Entities.EmailAuthenticator", b =>
                 {
                     b.HasOne("Core.Security.Entities.User", "User")
@@ -359,6 +409,25 @@ namespace Kodlama.io.Persistance.Migrations
                         .IsRequired();
 
                     b.Navigation("ProgramLanguage");
+                });
+
+            modelBuilder.Entity("Kodlama.io.Domain.Entities.UserSocialMedia", b =>
+                {
+                    b.HasOne("Kodlama.io.Domain.Entities.SocialMedia", "SocialMedia")
+                        .WithMany()
+                        .HasForeignKey("SocialMediaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Core.Security.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SocialMedia");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Core.Security.Entities.User", b =>

@@ -5,6 +5,7 @@ using Kodlama.io.Application.Features.UserSocialMedias.Rules;
 using Kodlama.io.Application.Services.Repositories;
 using Kodlama.io.Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,22 +14,25 @@ using System.Threading.Tasks;
 
 namespace Kodlama.io.Application.Features.UserSocialMedias.Queries.GetById
 {
-    public  class GetByIdSocialMediaQuery:IRequest<GetByIdSocialMediaDto>
+    public  class GetByIdSocialMediaQuery:IRequest<GetByIdUserSocialMediaDto>
     {
         public int Id { get; set; }
 
         public class GetByIdSocialMediaQueryHandler : UserSocialMediaDependResolver,
-            IRequestHandler<GetByIdSocialMediaQuery, GetByIdSocialMediaDto>
+            IRequestHandler<GetByIdSocialMediaQuery, GetByIdUserSocialMediaDto>
         {
             public GetByIdSocialMediaQueryHandler(IUserSocialMediaRepository socialMediaRepository, IMapper mapper, UserSocialMediaBusinessRules socialMediaBusinessRules) : base(socialMediaRepository, mapper, socialMediaBusinessRules)
             {
             }
 
-            public async Task<GetByIdSocialMediaDto> Handle(GetByIdSocialMediaQuery request, CancellationToken cancellationToken)
+            public async Task<GetByIdUserSocialMediaDto> Handle(GetByIdSocialMediaQuery request, CancellationToken cancellationToken)
             {
-               UserSocialMedia? socialMedia = await  UserSocialMediaRepository.GetAsync(c => c.Id == request.Id);
+               UserSocialMedia? socialMedia = await  UserSocialMediaRepository.
+                    GetAsync(c => c.Id == request.Id,
+                             include:ef=>ef.Include(c=>c.SocialMedia));
+
                 //null check in  busniess Role
-                return Mapper.Map<GetByIdSocialMediaDto>(socialMedia);
+                return Mapper.Map<GetByIdUserSocialMediaDto>(socialMedia);
             }
         }
     }

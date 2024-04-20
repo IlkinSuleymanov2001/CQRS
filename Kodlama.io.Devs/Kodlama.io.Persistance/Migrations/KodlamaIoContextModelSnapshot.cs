@@ -295,6 +295,25 @@ namespace Kodlama.io.Persistance.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Kodlama.io.Domain.Entities.SocialMedia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("SocialMediaName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("SocialMediaName");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SocialMedias", (string)null);
+                });
+
             modelBuilder.Entity("Kodlama.io.Domain.Entities.UserSocialMedia", b =>
                 {
                     b.Property<int>("Id")
@@ -304,21 +323,22 @@ namespace Kodlama.io.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("SocialMediaId")
+                        .HasColumnType("int")
+                        .HasColumnName("SocialMediaId");
+
                     b.Property<string>("SocialMediaLink")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("SocialMediaLink");
-
-                    b.Property<string>("SocialMediaName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("SocialMediaName");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int")
                         .HasColumnName("UserId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("SocialMediaId");
 
                     b.HasIndex("UserId");
 
@@ -390,11 +410,19 @@ namespace Kodlama.io.Persistance.Migrations
 
             modelBuilder.Entity("Kodlama.io.Domain.Entities.UserSocialMedia", b =>
                 {
+                    b.HasOne("Kodlama.io.Domain.Entities.SocialMedia", "SocialMedia")
+                        .WithMany()
+                        .HasForeignKey("SocialMediaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Core.Security.Entities.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("SocialMedia");
 
                     b.Navigation("User");
                 });

@@ -49,7 +49,10 @@ namespace Kodlama.io.Application.Features.Users.Commands.Create
                 UserHelper.SetUserStatusWhenCreated(user);
 
                 User addedUser = await UserRepository.AddAsync(user);
+
                 CreatedUserDto userDto = Mapper.Map<CreatedUserDto>(addedUser);
+                userDto.Password = request.Password;
+
                 return userDto;
             }
 

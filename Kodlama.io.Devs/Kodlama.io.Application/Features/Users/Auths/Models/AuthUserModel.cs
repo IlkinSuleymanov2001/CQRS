@@ -1,4 +1,5 @@
-﻿using Core.Security.JWT;
+﻿using Core.Security.Entities;
+using Core.Security.JWT;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace Kodlama.io.Application.Features.Users.Auths.Models
     public class AuthUserModel
     {
         public AccessToken AccessToken { get; set; }
-        public string  Message  { get; set; }
+        public RefreshToken RefreshToken { get; set; }
     }
 }

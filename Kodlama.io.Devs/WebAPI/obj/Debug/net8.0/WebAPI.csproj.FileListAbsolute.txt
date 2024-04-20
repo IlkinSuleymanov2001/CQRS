@@ -320,3 +320,5 @@ C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\WebAPI\obj\Deb
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\WebAPI\obj\Debug\net8.0\WebAPI.pdb
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\WebAPI\obj\Debug\net8.0\WebAPI.genruntimeconfig.cache
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\WebAPI\obj\Debug\net8.0\ref\WebAPI.dll
+C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\WebAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\WebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

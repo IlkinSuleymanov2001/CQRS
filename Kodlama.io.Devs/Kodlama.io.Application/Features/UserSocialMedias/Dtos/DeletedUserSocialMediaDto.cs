@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Kodlama.io.Application.Features.UserSocialMedias.Dtos
 {
-    public class CreateUserSocialMediaDto
+    public  class DeletedUserSocialMediaDto
     {
-        public int UserId { get; set; }
         public int Id { get; set; }
+        public int UserId { get; set; }
         public string SocialMediaName { get; set; }
         public string SocialMediaLink { get; set; }
     }

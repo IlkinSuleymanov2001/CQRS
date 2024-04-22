@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Kodlama.io.Application.Features.SocialMedias.Rules;
+using Kodlama.io.Application.Features.Users.Rules;
 using Kodlama.io.Application.Features.UserSocialMedias.Dtos;
 using Kodlama.io.Application.Features.UserSocialMedias.EntityBaseDependency;
 using Kodlama.io.Application.Features.UserSocialMedias.Rules;
@@ -6,11 +8,6 @@ using Kodlama.io.Application.Services.Repositories;
 using Kodlama.io.Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Kodlama.io.Application.Features.UserSocialMedias.Commands.Create
 {
@@ -22,28 +19,33 @@ namespace Kodlama.io.Application.Features.UserSocialMedias.Commands.Create
 
         public class CreateUserSocialMediaCommandHandler :UserSocialMediaDependResolver,  IRequestHandler<CreateUserSocialMediaCommand, CreatedUserSocialMediaDto>
         {
-            public CreateUserSocialMediaCommandHandler(IUserSocialMediaRepository socialMediaRepository, IMapper mapper, UserSocialMediaBusinessRules socialMediaBusinessRules) : base(socialMediaRepository, mapper, socialMediaBusinessRules)
+
+            private readonly SocialMediaBusinessRules _socialMediaBusinessRules;
+            private readonly UserBusinessRules _userBusinessRules;
+            public CreateUserSocialMediaCommandHandler(
+                IUserSocialMediaRepository socialMediaRepository,
+                IMapper mapper, 
+                UserSocialMediaBusinessRules socialMediaBusinessRules,
+                SocialMediaBusinessRules socialMediaBusiness,
+                UserBusinessRules userBusinessRules) 
+                : base(socialMediaRepository, mapper, socialMediaBusinessRules)
             {
+                _socialMediaBusinessRules = socialMediaBusiness;
+                _userBusinessRules = userBusinessRules;
             }
 
             public async  Task<CreatedUserSocialMediaDto> Handle(CreateUserSocialMediaCommand request, CancellationToken cancellationToken)
             {
-                // Busines role yazarsan [name and  link] uniques olsun 
-                // business role useri tapsin eks halde xeta atsin 
-                // validator elave et.
-                UserSocialMedia userSocialMedia =  Mapper.Map<UserSocialMedia>(request);
-                var addedUserSocialMedia  = await UserSocialMediaRepository.AddAsync(userSocialMedia);
+                await _userBusinessRules.UserExistsWhenRequested(request.UserId);
+                await _socialMediaBusinessRules.SocialMediaExsitsWhenRequested(request.SocialMediaId);
+                await UserSocialMediaBusinessRules.UserAndLinkMustBeUniqueWhenRequested(request.UserId,request.SocialMediaLink);
 
-                var fullDataForUserSocialMedia =await UserSocialMediaRepository.GetAsync(predicate: p => p.Id == addedUserSocialMedia.Id,
-                    include: ef => {
-                        var queryUserSocialMedia = ef
-                        .Include(c => c.SocialMedia)
-                        .Include(c => c.User);
-                        return queryUserSocialMedia;
-                            });
+                UserSocialMedia mappedUserSocialMedia =  Mapper.Map<UserSocialMedia>(request);
+                var addedUserSocialMedia  = await UserSocialMediaRepository.AddAsync(mappedUserSocialMedia);
 
-                return Mapper.Map<CreatedUserSocialMediaDto>(fullDataForUserSocialMedia);
+                return Mapper.Map<CreatedUserSocialMediaDto>(addedUserSocialMedia);
             }
+
         }
 
     }

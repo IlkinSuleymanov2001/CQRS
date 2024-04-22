@@ -18,7 +18,9 @@ C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Dom
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Domain\bin\Debug\net8.0\Kodlama.io.Domain.dll
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Domain\bin\Debug\net8.0\Kodlama.io.Domain.pdb
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Domain\bin\Debug\net8.0\Core.Persistence.dll
+C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Domain\bin\Debug\net8.0\Core.Security.dll
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Domain\bin\Debug\net8.0\Core.Persistence.pdb
+C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Domain\bin\Debug\net8.0\Core.Security.pdb
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Domain\obj\Debug\net8.0\Kodlama.io.Domain.csproj.AssemblyReference.cache
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Domain\obj\Debug\net8.0\Kodlama.io.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Domain\obj\Debug\net8.0\Kodlama.io.Domain.AssemblyInfoInputs.cache
@@ -30,5 +32,3 @@ C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Dom
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Domain\obj\Debug\net8.0\refint\Kodlama.io.Domain.dll
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Domain\obj\Debug\net8.0\Kodlama.io.Domain.pdb
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Domain\obj\Debug\net8.0\ref\Kodlama.io.Domain.dll
-C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Domain\bin\Debug\net8.0\Core.Security.dll
-C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\Kodlama.io.Domain\bin\Debug\net8.0\Core.Security.pdb

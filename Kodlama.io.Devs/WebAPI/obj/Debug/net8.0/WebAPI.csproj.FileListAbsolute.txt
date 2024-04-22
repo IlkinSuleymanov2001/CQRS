@@ -303,7 +303,6 @@ C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\WebAPI\obj\Deb
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\WebAPI\obj\Debug\net8.0\WebAPI.AssemblyInfoInputs.cache
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\WebAPI\obj\Debug\net8.0\WebAPI.AssemblyInfo.cs
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\WebAPI\obj\Debug\net8.0\WebAPI.csproj.CoreCompileInputs.cache
-C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\WebAPI\obj\Debug\net8.0\WebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\WebAPI\obj\Debug\net8.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\WebAPI\obj\Debug\net8.0\WebAPI.sourcelink.json
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Kodlama.io.Devs\WebAPI\obj\Debug\net8.0\staticwebassets.build.json

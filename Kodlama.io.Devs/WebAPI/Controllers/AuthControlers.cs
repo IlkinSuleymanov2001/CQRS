@@ -13,14 +13,14 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> Login(UserForLoginDto userForLogin)
         {
             var response = await Mediator.Send(new LoginUserCommand { UserForLoginDto = userForLogin});
-            return Ok(response.AccessToken);
+            return Ok(response?.AccessToken);
         }
 
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserForRegisterDto  userForRegisterDto)
         {
             var response = await Mediator.Send(new RegisterUserCommand { UserForRegisterDto   = userForRegisterDto});
-            return Ok(response.AccessToken);
+            return Ok(response?.AccessToken);
         }
     }
 }

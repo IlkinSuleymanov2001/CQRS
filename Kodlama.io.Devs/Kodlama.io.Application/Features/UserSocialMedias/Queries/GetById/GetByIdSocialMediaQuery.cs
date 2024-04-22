@@ -27,11 +27,12 @@ namespace Kodlama.io.Application.Features.UserSocialMedias.Queries.GetById
 
             public async Task<GetByIdUserSocialMediaDto> Handle(GetByIdSocialMediaQuery request, CancellationToken cancellationToken)
             {
-               UserSocialMedia? socialMedia = await  UserSocialMediaRepository.
+                UserSocialMedia? socialMedia = await  UserSocialMediaRepository.
                     GetAsync(c => c.Id == request.Id,
                              include:ef=>ef.Include(c=>c.SocialMedia));
 
-                //null check in  busniess Role
+                UserSocialMediaBusinessRules.UserSocialMediaNullCheck(socialMedia);
+
                 return Mapper.Map<GetByIdUserSocialMediaDto>(socialMedia);
             }
         }

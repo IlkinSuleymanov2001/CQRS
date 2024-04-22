@@ -1,11 +1,6 @@
 ﻿using AutoMapper;
 using Kodlama.io.Application.Features.UserSocialMedias.Rules;
 using Kodlama.io.Application.Services.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Kodlama.io.Application.Features.UserSocialMedias.EntityBaseDependency
 {
@@ -13,13 +8,13 @@ namespace Kodlama.io.Application.Features.UserSocialMedias.EntityBaseDependency
     {
         protected IUserSocialMediaRepository UserSocialMediaRepository { get; }
         protected IMapper Mapper { get; }
-        protected UserSocialMediaBusinessRules SocialMediaBusinessRules { get; }
+        protected UserSocialMediaBusinessRules UserSocialMediaBusinessRules { get; }
 
         public UserSocialMediaDependResolver(IUserSocialMediaRepository socialMediaRepository, IMapper mapper, UserSocialMediaBusinessRules socialMediaBusinessRules)
         {
             UserSocialMediaRepository = socialMediaRepository;
             Mapper = mapper;
-            SocialMediaBusinessRules = socialMediaBusinessRules;
+            UserSocialMediaBusinessRules = socialMediaBusinessRules;
         }
 
     }

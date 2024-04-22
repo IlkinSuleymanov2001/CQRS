@@ -36,7 +36,7 @@ namespace Kodlama.io.Application.Features.Users.Commands.Update
 
             public async Task<UpdatedUserDto> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
             {
-                await Rules.UserEmailCanNotBeDublicatedWhenUpdated(request.Id ,request.Email);
+                await Rules.UserEmailCanNotBeDublicatedWhenRequested(email:request.Email,id: request.Id);
 
                 User mappedUser = Mapper.Map<User>(request);
                 // change extensionMethod

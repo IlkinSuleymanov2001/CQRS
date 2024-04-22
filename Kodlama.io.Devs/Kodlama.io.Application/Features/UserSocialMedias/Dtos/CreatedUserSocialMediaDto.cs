@@ -9,8 +9,6 @@ namespace Kodlama.io.Application.Features.UserSocialMedias.Dtos
     public class CreatedUserSocialMediaDto
     {
         public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
         public string Email { get; set; }
         public string SocialMediaName { get; set; }
         public string SocialMediaLink { get; set; }

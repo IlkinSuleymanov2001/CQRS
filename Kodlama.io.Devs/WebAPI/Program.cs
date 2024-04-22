@@ -1,7 +1,6 @@
 using Kodlama.io.Persistance;
 using Core.CrossCuttingConcerns.Exceptions;
 using Kodlama.io.Application;
-using Application;
 using Core.Security.JWT;
 using Microsoft.OpenApi.Models;
 using Core.Security.Encryption;
@@ -71,13 +70,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-if (app.Environment.IsProduction())
-{
-    app.ConfigureCustomExceptionMiddleware();
-}
+//if (app.Environment.IsProduction())
+
+app.ConfigureCustomExceptionMiddleware();
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

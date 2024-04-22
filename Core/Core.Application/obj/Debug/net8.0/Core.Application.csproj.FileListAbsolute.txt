@@ -42,8 +42,8 @@ C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Core\Core.Application\bin\Debu
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Core\Core.Application\bin\Debug\net8.0\Core.Application.dll
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Core\Core.Application\bin\Debug\net8.0\Core.Application.pdb
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Core\Core.Application\bin\Debug\net8.0\Core.CrossCuttingConcerns.dll
-C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Core\Core.Application\bin\Debug\net8.0\Core.Security.dll
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Core\Core.Application\bin\Debug\net8.0\Core.Persistence.dll
+C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Core\Core.Application\bin\Debug\net8.0\Core.Security.dll
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Core\Core.Application\bin\Debug\net8.0\Core.CrossCuttingConcerns.pdb
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Core\Core.Application\bin\Debug\net8.0\Core.Security.pdb
 C:\Users\ilkin\source\repos\ilkin\Kodlama.io.Devs\Core\Core.Application\bin\Debug\net8.0\Core.Persistence.pdb

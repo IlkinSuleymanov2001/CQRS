@@ -17,7 +17,7 @@ namespace Kodlama.io.Application.Features.Users.Authentications.Rules
         {
             var isLogin = HashingHelper.VerifyPasswordHash(outPassword,
                 user.PasswordHash, user.PasswordSalt);
-            if (!isLogin) { throw new AuthorizationException("Password doesnt Correct.."); }
+            if (!isLogin) { throw new AuthorizationException("Password does n0t Correct.."); }
         }
     }
 }

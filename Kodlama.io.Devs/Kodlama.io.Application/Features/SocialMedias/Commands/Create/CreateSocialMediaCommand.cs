@@ -24,7 +24,7 @@ namespace Kodlama.io.Application.Features.SocialMedias.Commands.Create
 
             public async Task<CreatedSocialMediaDto> Handle(CreateSocialMediaCommand request, CancellationToken cancellationToken)
             {
-                // Rule can not dublicated Social media Name ---Check 
+                await SocialMediaBusinessRules.SocialMediaNameCanNotBeDuplicatedWhenRequested(request.SocialMediaName);
                 SocialMedia mappedSocialMedia = Mapper.Map<SocialMedia>(request);
                 SocialMedia addedSocialMedia = await SocialMediaRepository.AddAsync(mappedSocialMedia);
                 CreatedSocialMediaDto responseDto = Mapper.Map<CreatedSocialMediaDto>(addedSocialMedia);

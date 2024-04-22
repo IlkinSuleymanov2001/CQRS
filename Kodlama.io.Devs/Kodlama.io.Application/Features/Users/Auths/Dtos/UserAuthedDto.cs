@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kodlama.io.Application.Features.Users.Auths.Models
+namespace Kodlama.io.Application.Features.Users.Auths.Dtos
 {
-    public class AuthUserModel
+    public class UserAuthedDto
     {
         public AccessToken AccessToken { get; set; }
         public RefreshToken RefreshToken { get; set; }

@@ -29,10 +29,6 @@
     <Folder Include="Features\OperationClaims\Rules\" />
     <Folder Include="Features\ProgramLanguages\Constants\" />
     <Folder Include="Features\ProgramLanguageTechnologies\Constants\" />
-    <Folder Include="Features\SocialMedias\Commands\Delete\Id\" />
-    <Folder Include="Features\SocialMedias\Commands\Delete\Name\" />
-    <Folder Include="Features\SocialMedias\Commands\Update\" />
-    <Folder Include="Features\SocialMedias\Queries\GetById\" />
     <Folder Include="Features\UserOperationClaims\Commands\" />
     <Folder Include="Features\UserOperationClaims\Dtos\" />
     <Folder Include="Features\UserOperationClaims\EntityBaseDependency\" />
@@ -41,7 +37,6 @@
     <Folder Include="Features\UserOperationClaims\Queries\" />
     <Folder Include="Features\UserOperationClaims\Rules\" />
     <Folder Include="Features\UserSocialMedias\Commands\Update\" />
-    <Folder Include="Features\UserSocialMedias\Models\" />
     <Folder Include="Features\UserSocialMedias\Queries\GetList\Id\Dynamic\" />
     <Folder Include="Features\UserSocialMedias\Queries\GetList\UserId\Dynamic\" />
     <Folder Include="Features\Users\Queries\GetList\Dynamic\" />

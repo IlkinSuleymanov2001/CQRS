@@ -22,6 +22,11 @@ namespace Kodlama.io.Application.Features.SocialMedias.Profiles
 
             CreateMap<SocialMedia, GetListSocialMediaDto>().ReverseMap();
             CreateMap<IPaginate<SocialMedia>, SocialMediaListModel>().ReverseMap();
+
+            CreateMap<SocialMedia, DeletedSocialMediaDto>().ReverseMap();
+            CreateMap<SocialMedia, UpdatedSocialMediaDto>().ReverseMap();
+            CreateMap<SocialMedia, GetByIdSocialMediaDto>().ReverseMap();
+
         }
     }
 }

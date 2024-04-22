@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using Core.Persistence.Paging;
 using Kodlama.io.Application.Features.UserSocialMedias.Commands.Create;
 using Kodlama.io.Application.Features.UserSocialMedias.Dtos;
+using Kodlama.io.Application.Features.UserSocialMedias.Models;
 using Kodlama.io.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -18,8 +20,6 @@ namespace Kodlama.io.Application.Features.UserSocialMedias.Profiles
             CreateMap<UserSocialMedia, CreateUserSocialMediaCommand>().ReverseMap();
             CreateMap<UserSocialMedia, CreatedUserSocialMediaDto>().
                 ForMember(c=>c.SocialMediaName,opt=>opt.MapFrom(c=>c.SocialMedia.SocialMediaName)).
-                ForMember(c => c.FirstName, opt => opt.MapFrom(c => c.User.FirstName)).
-                ForMember(c => c.LastName, opt => opt.MapFrom(c => c.User.LastName)).
                 ForMember(c => c.Email, opt => opt.MapFrom(c => c.User.Email)).ReverseMap();
 
             CreateMap<UserSocialMedia, GetByIdUserSocialMediaDto>().
@@ -27,6 +27,10 @@ namespace Kodlama.io.Application.Features.UserSocialMedias.Profiles
 
             CreateMap<UserSocialMedia, DeletedUserSocialMediaDto>().
                ForMember(c => c.SocialMediaName, opt => opt.MapFrom(c => c.SocialMedia.SocialMediaName)).ReverseMap();
+
+            CreateMap<IPaginate<UserSocialMedia>, UserSocialMediaListModel>().ReverseMap();
+            CreateMap<UserSocialMedia, GetListUserSocialMediaDto>().
+                ForMember(c => c.SocialMediaName, opt => opt.MapFrom(c => c.SocialMedia.SocialMediaName)).ReverseMap();
         }
     }
 }

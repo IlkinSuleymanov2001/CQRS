@@ -11,9 +11,9 @@ namespace Kodlama.io.Application.Features.ProgramLanguageTechnologies.BaseEntity
 {
     public  class ProgramLanguageTechnologyDependResolver
     {
-        protected IProgramLanguageTechnologyRepository TechnologyRepository { get; set; }
-        protected IMapper Mapper { get; set; }
-        protected ProgramLanguageTechnologyBusinessRules Rules { get; set; }
+        protected IProgramLanguageTechnologyRepository TechnologyRepository { get;  }
+        protected IMapper Mapper { get; }
+        protected ProgramLanguageTechnologyBusinessRules Rules { get; }
         public ProgramLanguageTechnologyDependResolver(
             IProgramLanguageTechnologyRepository technologyRepository,
             IMapper mapper, 

@@ -31,8 +31,9 @@ namespace Kodlama.io.Application.Features.UserSocialMedias.Commands.Delete
 
             public async Task<DeletedUserSocialMediaDto> Handle(DeleteUserSocialMediaCommand request, CancellationToken cancellationToken)
             {
-                UserSocialMedia? userSocialMedia = await UserSocialMediaRepository.GetAsync(c => c.Id == request.Id, include: ef => ef.Include(c => c.SocialMedia));
-                //null Check 
+                var userSocialMedia = await UserSocialMediaRepository.GetAsync(c => c.Id == request.Id, include: ef => ef.Include(c => c.SocialMedia));
+                UserSocialMediaBusinessRules.UserSocialMediaNullCheck(userSocialMedia);
+
                 await UserSocialMediaRepository.DeleteAsync(userSocialMedia);
                 DeletedUserSocialMediaDto responseDto = Mapper.Map<DeletedUserSocialMediaDto>(userSocialMedia);
 

@@ -1,16 +1,10 @@
 ﻿using AutoMapper;
-using Core.CrossCuttingConcerns.Exceptions;
 using Core.Security.Entities;
 using Kodlama.io.Application.Features.Users.Dtos;
 using Kodlama.io.Application.Features.Users.EntityBaseDependency;
 using Kodlama.io.Application.Features.Users.Rules;
 using Kodlama.io.Application.Services.Repositories;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Kodlama.io.Application.Features.Users.Commands.Delete.Id
 {

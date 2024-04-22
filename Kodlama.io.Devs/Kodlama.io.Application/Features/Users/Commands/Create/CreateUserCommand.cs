@@ -43,10 +43,10 @@ namespace Kodlama.io.Application.Features.Users.Commands.Create
             public async Task<CreatedUserDto> Handle(CreateUserCommand request, CancellationToken cancellationToken)
             {
                 await Rules.UserEmailCanNotBeDublicatedWhenRequested(email:request.Email);
-                User mappedUser = Mapper.Map<User>(request);
+                User user = Mapper.Map<User>(request);
 
-                User user = UserHelper.SetUserPasswordDatas(mappedUser, request.Password);
-                UserHelper.SetUserStatusWhenCreated(user);
+                user.SetUserPasswordDatas(request.Password);
+                user.Status = true;
 
                 User addedUser = await UserRepository.AddAsync(user);
 

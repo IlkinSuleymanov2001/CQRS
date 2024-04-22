@@ -39,8 +39,7 @@ namespace Kodlama.io.Application.Features.Users.Commands.Update
                 await Rules.UserEmailCanNotBeDublicatedWhenRequested(email:request.Email,id: request.Id);
 
                 User mappedUser = Mapper.Map<User>(request);
-                // change extensionMethod
-                UserHelper.SetUserPasswordDatas(mappedUser, request.Password);
+                mappedUser.SetUserPasswordDatas(request.Password);
 
                 User updatedUser = await UserRepository.UpdateAsync(mappedUser);
                 UpdatedUserDto userDto = Mapper.Map<UpdatedUserDto>(updatedUser);

@@ -7,6 +7,7 @@ using Kodlama.io.Application.Features.SocialMedias.Rules;
 using Kodlama.io.Application.Features.Users.Authentications.Rules;
 using Kodlama.io.Application.Features.Users.Rules;
 using Kodlama.io.Application.Features.UserSocialMedias.Rules;
+using Kodlama.io.Application.Services.AuthService;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -33,6 +34,7 @@ namespace Kodlama.io.Application
             services.AddScoped<AuthBusinessRoles>();
             services.AddScoped<UserSocialMediaBusinessRules>();
             services.AddScoped<SocialMediaBusinessRules>();
+            services.AddScoped<IAuthService, AuthManager>();
 
             services.AddSecurityServices(); 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
